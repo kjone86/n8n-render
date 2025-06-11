@@ -2,9 +2,9 @@ services:
   - type: web
     name: n8n
     env: docker
-    region: oregon # optional (defaults to oregon)
-    plan: standard # optional (defaults to starter)
-    branch: main # optional (defaults to master)
+    region: ohio
+    plan: standard
+    branch: main
     numInstances: 1
     healthCheckPath: /
     envVars:
@@ -33,9 +33,15 @@ services:
       - key: DB_POSTGRESDB_SCHEMA
         value: public
       - key: WEBHOOK_URL
-        value: https://your-n8n-app.onrender.com/
+        value: https://n8n-render-cnla.onrender.com/
+      - key: N8N_EDITOR_BASE_URL
+        value: https://n8n-render-cnla.onrender.com/
       - key: N8N_ENCRYPTION_KEY
-        value: YOUR_ENCRYPTION_KEY_HERE
+        value: 8f2a39c7b561ea97c494ae1f6a314d8f9b47dc40e64c1ba3de9246fa3d2b79e0
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: F$863fdnm
       - key: GENERIC_TIMEZONE
         value: America/Sao_Paulo
       - key: TZ
